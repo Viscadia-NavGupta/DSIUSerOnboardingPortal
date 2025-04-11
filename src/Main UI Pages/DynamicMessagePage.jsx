@@ -24,7 +24,7 @@ function DynamicMessagePage({ message }) {
           />
         </div>
 
-        <h2>Welcome to the Viscadia Platform</h2>
+        <h2>Welcome to the Viscadia Forcast Platform</h2>
         <h3>User Onboarding Portal</h3>
 
         {/* Dynamic Message Box */}

@@ -62,7 +62,7 @@ function ResetPasswordPage() {
         <div className="card-logo">
           <img src={ViscadiaLogo} alt="Viscadia Logo" className="card-logo-img" />
         </div>
-        <h2>Welcome to the Viscadia Platform</h2>
+        <h2>Welcome to the Viscadia Forcast Platform</h2>
         <h3>User Onboarding Portal</h3>
         {error && <div className="error-message">{error}</div>}
         <form className="onboarding-form" onSubmit={handleSubmit}>
