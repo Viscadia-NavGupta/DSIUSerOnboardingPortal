@@ -54,7 +54,7 @@ function OnboardingPortal() {
           </form>
         )}
         <div className="powered-by-container">
-          <p>Powered by Viscadia</p>
+          {/* <p>Powered by Viscadia</p> */}
           <img
             src={PoweredByBg}
             alt="Flow Background"
