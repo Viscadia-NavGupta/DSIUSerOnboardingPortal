@@ -1,33 +1,45 @@
 import React from 'react';
-import './PasswordChangedPage.css';  // Reuse your existing CSS
+import './PasswordChangedPage.css';
+
 import ViscadiaLogo from '../assets/Viscadia_logo_red.png';
+import DsiLogo from '../assets/DSI_logo.png';        // ← DSI logo
 import PoweredByBg from '../assets/Flow.png';
 
-// React Icons (Ant Design outline icon)
+// React Icon for the success check
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 function PasswordChangedPage() {
   return (
     <div className="onboarding-container">
       <div className="onboarding-card">
-        {/* Logo at the top */}
-        <div className="card-logo">
+
+        {/* ───────────── logo header ───────────── */}
+        <div className="logo-header">
+          {/* Viscadia on the left */}
           <img
             src={ViscadiaLogo}
             alt="Viscadia Logo"
-            className="card-logo-img"
+            className="logo-img"
+          />
+
+          <div className="logo-separator" />
+
+          {/* DSI on the right */}
+          <img
+            src={DsiLogo}
+            alt="DSI Logo"
+            className="viscadia-img"
           />
         </div>
+        {/* ─────────────────────────────────────── */}
 
-        {/* Success message */}
         <h2>Your password has been successfully changed.</h2>
 
         {/* Large green check icon */}
         <AiOutlineCheckCircle className="success-check-icon" />
 
-        {/* Wave at the bottom */}
+        {/* Powered‐by wave/image at the bottom */}
         <div className="powered-by-container">
-          {/* <p>Powered by Viscadia</p> */}
           <img
             src={PoweredByBg}
             alt="Flow Background"
@@ -39,7 +51,7 @@ function PasswordChangedPage() {
       {/* Footer */}
       <footer className="onboarding-footer">
         <p>
-          © 2025 Viscadia. All rights reserved. <a href="#contact">Contact Us</a>
+          © 2025 Viscadia. All rights reserved.
         </p>
       </footer>
     </div>

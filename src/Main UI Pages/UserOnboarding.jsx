@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import './OnboardingPortal.css';
-import ViscadiaLogo from '../assets/Viscadia_logo_red.png';
+
+import DsiLogo from '../assets/DSI_logo.png';              // DSI logo (now on right)
+import ViscadiaLogo from '../assets/Viscadia_logo_red.png'; // Viscadia logo (now on left)
 import PoweredByBg from '../assets/Flow.png';
 
-// Import the sendOTP function from your AuthAws.js file (adjust the path if needed)
 import { sendOTP } from './AuthAWS';
 import { useNavigate } from 'react-router-dom';
 
@@ -17,10 +18,8 @@ function OnboardingPortal() {
     setLoading(true);
     try {
       await sendOTP(email);
-      // On success, navigate to /reset and pass the email as state
       navigate('/reset', { state: { email } });
     } catch (error) {
-      // On error, navigate to /dynamic with the error message
       navigate('/dynamic', { state: { message: error.message } });
     } finally {
       setLoading(false);
@@ -30,15 +29,30 @@ function OnboardingPortal() {
   return (
     <div className="onboarding-container">
       <div className="onboarding-card">
-        <div className="card-logo">
+
+        {/* ───────────── logo header ───────────── */}
+        <div className="logo-header">
+          {/* Viscadia on the left */}
           <img
             src={ViscadiaLogo}
             alt="Viscadia Logo"
-            className="card-logo-img"
+            className="logo-img"
+          />
+
+          <div className="logo-separator" />
+
+          {/* DSI on the right */}
+          <img
+            src={DsiLogo}
+            alt="DSI Logo"
+            className="viscadia-img"
           />
         </div>
-        <h2>Viscadia Forecasting Solution</h2>
-        <h3>Password Reset Portal</h3>
+        {/* ─────────────────────────────────────── */}
+
+        <h2>DSI ADC Forecasting Solution</h2>
+        <h3>User Onboarding Portal</h3>
+
         {loading ? (
           <div className="loading-screen">Loading...</div>
         ) : (
@@ -53,8 +67,8 @@ function OnboardingPortal() {
             <button type="submit">Submit</button>
           </form>
         )}
+
         <div className="powered-by-container">
-          {/* <p>Powered by Viscadia</p> */}
           <img
             src={PoweredByBg}
             alt="Flow Background"
@@ -62,9 +76,10 @@ function OnboardingPortal() {
           />
         </div>
       </div>
+
       <footer className="onboarding-footer">
         <p>
-          © 2025 Viscadia. All rights reserved. <a href="#contact">Contact Us</a>
+          © 2025 Viscadia. All rights reserved.
         </p>
       </footer>
     </div>
